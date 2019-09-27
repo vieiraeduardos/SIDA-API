@@ -1,15 +1,14 @@
 const { GraphQLServer } = require('graphql-yoga')
 
 const conexao = require('./infraestrutura/conexao')
-const Tabelas = require('./infraestrutura/database/tabelas')
+
 const Operacoes = require('./infraestrutura/operations')
 
-const Clientes = new Operacoes('cliente');
-const Pets = new Operacoes('pet');
+const ObjetosDeAprendizagem = new Operacoes('ObjetoDeAprendizagem');
 
 const resolvers = {
   Query: {
-    objetosDeAprendizagem: () => Clientes.lista()
+    objetosDeAprendizagem: () => ObjetosDeAprendizagem.lista()
 
   }
 }
@@ -19,15 +18,14 @@ const servidor = new GraphQLServer({
   typeDefs: './schema.graphql'
 })
 
-servidor.start(() => console.log('Servidor ouvindo'))
+servidor.start(() => console.log('O servidor está executando...'))
 
 conexao.connect(erro => {
   if (erro) {
     console.log(erro)
   }
 
-  console.log('conectou no banco')
+  console.log('O banco de dados está executando...')
 
-  //Tabelas.init(conexao)
 })
 

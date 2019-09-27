@@ -1,6 +1,6 @@
 const executaQuery = require('../database/queries')
 
-class Cliente {
+class ObjetoDeAprendizagem {
   lista() {
     const sql = 'SELECT * FROM objeto_aprendizagem'
 
@@ -70,4 +70,4 @@ class Cliente {
   }
 }
 
-module.exports = new Cliente
+module.exports = new ObjetoDeAprendizagem

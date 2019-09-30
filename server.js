@@ -6,9 +6,12 @@ const Operacoes = require('./infraestrutura/operations')
 
 const ObjetosDeAprendizagem = new Operacoes('ObjetoDeAprendizagem');
 
+const Atividades = new Operacoes('Atividade');
+
 const resolvers = {
   Query: {
-    objetosDeAprendizagem: () => ObjetosDeAprendizagem.lista()
+    objetosDeAprendizagem: () => ObjetosDeAprendizagem.lista(),
+    atividades: () => Atividades.lista()
 
   }
 }

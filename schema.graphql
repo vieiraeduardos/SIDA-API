@@ -19,8 +19,23 @@ type ObjetoDeAprendizagem {
 
 }
 
-type Query {
-    objetosDeAprendizagem: [ObjetoDeAprendizagem!]!
+type Atividade {
+    id: ID,
+    modalidade: Int,
+    tipo: Int,
+    tema: String,
+    decs: String,
+    moderador: Int,
+    descricao: String,
+    dtdispo: DateTime,
+    hr_inicio: String,
+    hr_termino: String,
+    local: Int,
+    status: Int  
+}
 
+type Query {
+    objetosDeAprendizagem: [ObjetoDeAprendizagem!]!,
+    atividades: [Atividade!]!
 }
 

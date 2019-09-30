@@ -1,22 +1,26 @@
 const executaQuery = require('../database/queries')
 
-class Pet {
+class Atividade {
   lista() {
-    const sql = 'SELECT Pets.id, Pets.nome, Pets.tipo, Pets.observacoes, Clientes.id as donoId, Clientes.nome as donoNome, Clientes.cpf as donoCpf FROM Pets INNER JOIN Clientes WHERE Pets.donoId = Clientes.id'
+    const sql = 'SELECT * FROM atividade';
 
-    return executaQuery(sql).then(pets =>
-      pets.map(pet => ({
-        id: pet.id,
-        nome: pet.nome,
-        tipo: pet.tipo,
-        observacoes: pet.observacoes,
-        dono: {
-          id: pet.donoId,
-          nome: pet.donoNome,
-          cpf: pet.donoCpf
-        }
-      }))
-    )
+    return executaQuery(sql).then(objetos => {
+
+        return objetos.map(objeto => ({
+          id: objeto.id,
+          modalidade: objeto.modalidade,
+          tipo: objeto.tipo,
+          tema: objeto.tema,
+          decs: objeto.cod_decs,
+          moderador: objeto.moderador,
+          descricao: objeto.descricao,
+          dtdispo: objeto.dt,
+          hr_inicio: objeto.hr_inicio,
+          hr_termino: objeto.hr_termino,
+          local: objeto.local,
+          status: objeto.status                
+        }))
+    })
   }
 
   buscaPorId(id) {
@@ -78,4 +82,4 @@ class Pet {
   }
 }
 
-module.exports = new Pet
+module.exports = new Atividade

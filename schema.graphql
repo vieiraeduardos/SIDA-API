@@ -31,11 +31,48 @@ type Atividade {
     hr_inicio: String,
     hr_termino: String,
     local: Int,
-    status: Int  
+    status: Int,
+    participantes: [Participante!]! 
+}
+
+type Participante {
+    id: ID!,
+    cpf: String,
+    cbo: Int,
+    cnes: Int,
+    ine: Int,
+    satisf: Int,
+    dtparti: DateTime
+}
+
+type Estabelecimento {
+    cnes: Int,
+    nome: String,
+    tconsul: Int,
+    tdiagn: Int,
+    teduca: Int,
+}
+
+type Teleconsultoria {
+    dtsol: DateTime,
+    tipo: String,
+    canal: String,
+    scpf: String,
+    scbo: String,
+    scnes: String,
+    cids: [String!],
+    ciaps: [String!],
+    dtresp: DateTime,
+    evenc: String,
+    inenc: String,
+    satisf: String,
+    rduvida: String,
+    psof: String
 }
 
 type Query {
     objetosDeAprendizagem: [ObjetoDeAprendizagem!]!,
-    atividades: [Atividade!]!
+    atividades: [Atividade!]!,
+    estabelecimentos: [Estabelecimento!]!
 }
 

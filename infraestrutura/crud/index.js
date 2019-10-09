@@ -1,11 +1,11 @@
 const atendimento = require('./atendimento')
 const ObjetoDeAprendizagem = require('./ObjetoDeAprendizagem')
 const Atividade = require('./Atividade')
-const servico = require('./servico')
+const Estabelecimento = require('./Estabelecimento')
 
 module.exports = {
   atendimento,
   ObjetoDeAprendizagem,
   Atividade,
-  servico
+  Estabelecimento
 }

@@ -1,10 +1,21 @@
 const executaQuery = require('../database/queries')
 
-class Servico {
+class Estabelecimento {
   lista(res) {
-    const sql = 'SELECT * FROM Servicos'
+    const sql = 'SELECT * FROM ubs'
 
-    executaQuery(res, sql)
+    return executaQuery(sql).then(dados => {
+      const objetos = dados
+  
+      return objetos.map(objeto => ({
+        cnes: objeto.cnes,
+        nome: objeto.nome,
+        tconsul: 1,
+        tdiagn: 0,
+        teduca: 0,
+        
+      }))
+    })
   }
 
   buscaPorId(res, id) {
@@ -34,4 +45,4 @@ class Servico {
   }
 }
 
-module.exports = new Servico
+module.exports = new Estabelecimento

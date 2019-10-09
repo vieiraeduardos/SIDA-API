@@ -8,10 +8,13 @@ const ObjetosDeAprendizagem = new Operacoes('ObjetoDeAprendizagem');
 
 const Atividades = new Operacoes('Atividade');
 
+const Estabelecimentos = new Operacoes('Estabelecimento');
+
 const resolvers = {
   Query: {
     objetosDeAprendizagem: () => ObjetosDeAprendizagem.lista(),
-    atividades: () => Atividades.lista()
+    atividades: () => Atividades.lista(),
+    estabelecimentos: () => Estabelecimentos.lista()
 
   }
 }

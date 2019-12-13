@@ -14,13 +14,9 @@ Install and update using Node.js:
     npm install
 
 
-Execute using React Native:
+Execute using Node.js:
 
-    npx react-native start
-    
-    npx react-native run-android (Para Android)
-    
-    npx react-native run-ios (Para iOS)
+    npm start
 
 Links
 -----
